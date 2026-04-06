@@ -49,7 +49,7 @@ When expired:
 ```
 🚫 SECURITY LOCK: Trial period expired
 This assessment is for interview evaluation only.
-Contact: interview@assessment.local for production licensing.
+Contact: dukor.unique@gmail.com for production licensing.
 ```
 
 ---
@@ -400,7 +400,7 @@ If licensing this code for production:
 
 For security concerns or licensing:
 
-- **Email:** interview@assessment.local
+- **Email:** dukor.unique@gmail.com
 - **Subject:** [Assessment] Security/Licensing Inquiry
 
 ---
