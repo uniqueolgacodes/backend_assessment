@@ -1,0 +1,46 @@
+{
+  "name": "@assessment/backend-assessment",
+  "version": "1.0.0",
+  "description": "Backend Engineer Technical Assessment - gRPC Microservices with NestJS",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "setup": "chmod +x setup.sh && ./setup.sh",
+    "db:start": "docker-compose up -d postgres",
+    "db:stop": "docker-compose down",
+    "db:migrate": "cd packages/prisma && npx prisma migrate dev",
+    "db:generate": "cd packages/prisma && npx prisma generate",
+    "db:studio": "cd packages/prisma && npx prisma studio",
+    "build:packages": "npm run build --workspace=@assessment/security && npm run build --workspace=@assessment/proto",
+    "start:user": "cd apps/user-service && npm run start:dev",
+    "start:wallet": "cd apps/wallet-service && npm run start:dev",
+    "start:all": "concurrently \"npm run start:user\" \"npm run start:wallet\"",
+    "test": "cd apps/user-service && npm test && cd ../wallet-service && npm test",
+    "lint": "npm run lint --workspaces",
+    "clean": "find . -name 'node_modules' -type d -prune -exec rm -rf '{}' + && find . -name 'dist' -type d -prune -exec rm -rf '{}' + && find . -name '.assessment-lock' -type f -delete"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-org/backend-assessment.git"
+  },
+  "keywords": [
+    "nestjs",
+    "grpc",
+    "microservices",
+    "prisma",
+    "postgresql",
+    "assessment"
+  ],
+  "author": "Assessment Team",
+  "license": "MIT"
+}

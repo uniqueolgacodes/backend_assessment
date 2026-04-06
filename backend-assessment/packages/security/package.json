@@ -1,0 +1,21 @@
+{
+  "name": "@assessment/security",
+  "version": "1.0.0",
+  "description": "Interview Mode Security Guard - IP Protection Layer",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "@nestjs/common": "^10.0.0",
+    "chalk": "^4.1.2",
+    "figlet": "^1.7.0"
+  },
+  "devDependencies": {
+    "@types/figlet": "^1.5.8",
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}

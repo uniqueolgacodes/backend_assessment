@@ -1,0 +1,21 @@
+{
+  "name": "@assessment/proto",
+  "version": "1.0.0",
+  "description": "Shared gRPC Protocol Definitions",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "npm run compile:proto && tsc",
+    "compile:proto": "sh scripts/compile-proto.sh",
+    "dev": "tsc --watch"
+  },
+  "dependencies": {
+    "@grpc/grpc-js": "^1.9.0",
+    "@grpc/proto-loader": "^0.7.0",
+    "ts-proto": "^1.156.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0"
+  }
+}

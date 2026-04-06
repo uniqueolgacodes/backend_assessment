@@ -1,0 +1,70 @@
+syntax = "proto3";
+
+package wallet;
+
+option go_package = "./wallet";
+
+service WalletService {
+  rpc CreateWallet (CreateWalletRequest) returns (CreateWalletResponse);
+  rpc GetWallet (GetWalletRequest) returns (GetWalletResponse);
+  rpc CreditWallet (CreditWalletRequest) returns (CreditWalletResponse);
+  rpc DebitWallet (DebitWalletRequest) returns (DebitWalletResponse);
+}
+
+message CreateWalletRequest {
+  string userId = 1;
+}
+
+message CreateWalletResponse {
+  string id = 1;
+  string userId = 2;
+  double balance = 3;
+  string createdAt = 4;
+  bool success = 5;
+  string message = 6;
+}
+
+message GetWalletRequest {
+  string userId = 1;
+}
+
+message GetWalletResponse {
+  string id = 1;
+  string userId = 2;
+  double balance = 3;
+  string createdAt = 4;
+  bool exists = 5;
+  string message = 6;
+}
+
+message CreditWalletRequest {
+  string userId = 1;
+  double amount = 2;
+  string description = 3;
+}
+
+message CreditWalletResponse {
+  string id = 1;
+  string userId = 2;
+  double newBalance = 3;
+  double creditedAmount = 4;
+  bool success = 5;
+  string message = 6;
+  string transactionId = 7;
+}
+
+message DebitWalletRequest {
+  string userId = 1;
+  double amount = 2;
+  string description = 3;
+}
+
+message DebitWalletResponse {
+  string id = 1;
+  string userId = 2;
+  double newBalance = 3;
+  double debitedAmount = 4;
+  bool success = 5;
+  string message = 6;
+  string transactionId = 7;
+}
